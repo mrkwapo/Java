@@ -6,7 +6,7 @@ import java.awt.*;
 public class Main {
 
     public static void main(String[] args) {
-
+/
         //Primitive Types store actual values
         byte x = 1;
         byte y = x;
