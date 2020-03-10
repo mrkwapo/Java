@@ -12,8 +12,8 @@ public class Main {
         System.out.println(message.replace('!', '*')); //Hello World**  *.replace does not modify the original string
         System.out.println( message.toLowerCase()); //hello world!!
 
-        String message2 = "   Hello World" + "!!   ";
-        System.out.println(message2.trim()); //Hello World!!
+        String message2 = "   Hello \"World\"" + "!!   ";
+        System.out.println(message2.trim()); //Hello "World"!!
         System.out.println(message2); //   Hello World!!
     }
 }
