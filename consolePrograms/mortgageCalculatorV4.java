@@ -15,7 +15,8 @@ public class Main {
 
         printPaymentSchedule(principal, annualInterestRate, years);
     }
-
+    
+    //Methods
     private static void printMortgage(int principal, float annualInterestRate, byte years) {
         double mortgage = calculateMortgage(principal, annualInterestRate, years);
 
@@ -35,8 +36,7 @@ public class Main {
             System.out.println(NumberFormat.getCurrencyInstance().format(balance));
         }
     }
-
-    //Methods
+    
     public static double readNumber(String prompt, double min, double max){
         Scanner scanner = new Scanner(System.in);
         double value;
