@@ -13,7 +13,7 @@ public class Employee {
 
     //Methods
     public int calculateWages(int extraHours){
-        return baseSalary + (hourlyRate * extraHours);
+        return baseSalary + (getHourlyRate() * extraHours);
     }
 
     //Getter and Setter Methods
