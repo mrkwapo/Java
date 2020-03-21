@@ -1,0 +1,31 @@
+Create Money Managment System for Business Owner
+
+Customers
+Employees
+Funds 
+
+
+Tracking 
+Customer fees
+Customer fees paid
+Employee salary
+
+//Small Business
+Employees,
+Customers
+Employee Salaries
+
+//Employee
+id,
+name,
+salary
+
+Customer
+id,
+name,
+membership levels,
+fees paid,
+fees total
+
+
+OOP
