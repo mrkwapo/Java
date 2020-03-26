@@ -1,11 +1,11 @@
 package com.Dracodess;
 
+import java.text.ParseException;
+
 public class Main {
-    public static void main(String[] args) {
-        System.setProperty("webdriver.chrome.driver","C:/YourPathTo/chromedriver.exe");
-        var sharePrices = new ShareData();
-        sharePrices.displayCurrentPricesOfToday();
-        sharePrices.displayPast25daysOfPrices();
-        sharePrices.displaySharePricesByDateRange();
+    public static void main(String[] args) throws ParseException {
+        System.setProperty("webdriver.chrome.driver","C:/Users/Kwapalapagus/Desktop/Chrome/chromedriver.exe");
+        var shareData = new ShareData();
+        ShareReport.displaySharePricesByDateRange(shareData);
     }
 }
