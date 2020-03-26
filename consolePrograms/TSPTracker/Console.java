@@ -7,9 +7,11 @@ import java.util.Scanner;
 
 public class Console {
     //Setting the date format
-    public final static String DATE_FORMAT = "MM/dd/yyyy";
+    private final static String DATE_FORMAT = "MM/dd/yyyy";
+    //Instantiating Scanner Class
     private static Scanner scanner = new Scanner(System.in);
 
+    //This method prompts user for dates
     public static String readDate(String prompt) {
         String value;
         while (true) {
@@ -22,7 +24,7 @@ public class Console {
         return value;
     }
 
-    //This method validates user input for a valid date format
+    //This method validates user input is in a valid date format
     public static boolean isDateValid(String date)
     {
         try {
