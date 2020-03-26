@@ -21,9 +21,7 @@ public class ShareData {
     //Setting up and instantiating Chrome WebDriver to run in headless mode
     private ChromeOptions options = new ChromeOptions().addArguments("--headless");
     private WebDriver driver = new ChromeDriver(options);
-    
-    //Setting the date format
-    private final static String DATE_FORMAT = "MM/dd/yyyy";
+    private String startDate;
 
     //Using scanner to read user input
     private Scanner scanner = new Scanner(System.in);
@@ -42,31 +40,33 @@ public class ShareData {
     }
 
     //To handle date range, this method uses the isDateValid method to obtain a valid start date from the user
-    private String getStartDate(){
-        String startDate;
-        while (true) {
-            System.out.println("Start Date: (format MM/dd/yyyy) ");
-            startDate = scanner.next();
-            if(isDateValid(startDate))
-                break;
-        }
+    private String getStartDate() throws ParseException {
+
+        startDate = Console.readDate("Start Date: ");
         return startDate;
     }
 
     //To handle date range, this method uses the isDateValid method to obtain a valid end date from the user
-    private String getEndDate(){
-        String endDate;
-        while(true) {
-            System.out.println("End Date: (format MM/dd/yyyy) ");
-            endDate = scanner.next();
-            if(isDateValid(endDate))
+    private String getEndDate() throws ParseException {
+        var end ="";
+        DateFormat df = new SimpleDateFormat(Console.DATE_FORMAT);
+        var start = df.parse(startDate);
+        
+        //Validates the end date is after the start date
+        while (true) {
+            String endDate = Console.readDate("End Date: ");
+            if (start.before(df.parse(endDate))) {
+                end = endDate;
                 break;
+            }
+            System.out.println("End Date must be after Start Date");
         }
-        return endDate;
+            return end;
+
     }
 
     //This method handles, entering the date range and clicking the button to retrieve data of the selected date range
-    private void inputDateRange(){
+    private void inputDateRange() throws ParseException {
         var startDateInputBox =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("startdate")));
         var endDateInputBox =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("enddate")));
 
@@ -78,7 +78,7 @@ public class ShareData {
     }
 
     //This method displays share data when a user wants to enter a date range
-    public List displaySharePricesByDateRange(){
+    public List displaySharePricesByDateRange() throws ParseException {
         navigateToPage();
         inputDateRange();
         var prices = getShareData();
@@ -116,16 +116,6 @@ public class ShareData {
         return past25SharePriceData;
     }
 
-    //This method validates user input for a valid date format
-    private static boolean isDateValid(String date)
-    {
-        try {
-            DateFormat df = new SimpleDateFormat(DATE_FORMAT);
-            df.setLenient(false);
-            df.parse(date);
-            return true;
-        } catch (ParseException e) {
-            return false;
-        }
-    }
 }
+
+
