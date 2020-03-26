@@ -17,9 +17,11 @@ import java.util.Scanner;
 
 public class ShareData {
     //Setting up and instantiating Chrome WebDriver to run in headless mode
+    public String PATH = System.setProperty("webdriver.chrome.driver","C:/Users/YourPathTo/chromedriver.exe");
     private ChromeOptions options = new ChromeOptions().addArguments("--headless");
     private WebDriver driver = new ChromeDriver(options);
     private String startDate;
+    private final static String DATE_FORMAT = "MM/dd/yyyy";
 
     //Using scanner to read user input
     private Scanner scanner = new Scanner(System.in);
@@ -46,9 +48,9 @@ public class ShareData {
     //To handle date range, this method uses the isDateValid method to obtain a valid end date from the user
     private String getEndDate() throws ParseException {
         String end;
-        DateFormat df = new SimpleDateFormat(Console.DATE_FORMAT);
+        DateFormat df = new SimpleDateFormat(DATE_FORMAT);
         var start = df.parse(startDate);
-        
+
         //Validates the end date is after or equal to the start date
         while (true) {
             String endDate = Console.readDate("End Date: ");
@@ -63,8 +65,8 @@ public class ShareData {
 
     //This method handles, entering the date range and clicking the button to retrieve data of the selected date range
     public void inputDateRange() throws ParseException {
-        var startDateInputBox =  wait.until(ExpectedCnditions.visibilityOfElementLocated(By.id("startdate")));
-        var endDateInputBox =  wait.until(ExpectedCondons.visibilityOfElementLocated(By.id("enddate")));
+        var startDateInputBox =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("startdate")));
+        var endDateInputBox =  wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("enddate")));
 
         startDateInputBox.sendKeys(Keys.CONTROL + Keys.chord("a"), getStartDate());
         endDateInputBox.sendKeys(Keys.CONTROL + Keys.chord("a"), getEndDate());
