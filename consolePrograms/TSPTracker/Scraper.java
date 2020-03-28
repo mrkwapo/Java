@@ -17,7 +17,7 @@ import java.util.Scanner;
 
 public class Scraper {
     //Setting up and instantiating Chrome WebDriver to run in headless mode
-    public String PATH = System.setProperty("webdriver.chrome.driver","C:/Users/YourPathToHere/chromedriver.exe");
+    public String PATH = System.setProperty("webdriver.chrome.driver","C:/Users/Kwapalapagus/Desktop/Chrome/chromedriver.exe");
     private ChromeOptions options = new ChromeOptions().addArguments("--headless");
     private WebDriver driver = new ChromeDriver(options);
     private String startDate;
