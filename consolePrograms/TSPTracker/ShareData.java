@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.List;
 import java.util.Scanner;
 
-public class ShareData {
+public class Scraper {
     //Setting up and instantiating Chrome WebDriver to run in headless mode
     public String PATH = System.setProperty("webdriver.chrome.driver","C:/Users/YourPathToHere/chromedriver.exe");
     private ChromeOptions options = new ChromeOptions().addArguments("--headless");
@@ -60,7 +60,7 @@ public class ShareData {
             }
             System.out.println("End Date cannot be before Start Date");
         }
-            return end;
+        return end;
     }
 
     //This method handles, entering the date range and clicking the button to retrieve data of the selected date range
