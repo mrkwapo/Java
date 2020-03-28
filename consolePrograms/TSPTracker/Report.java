@@ -2,6 +2,7 @@ package com.Dracodess;
 
 import java.text.ParseException;
 
+//This class' concern is to handle displaying a report of retrieved shares
 public class Report {
 
    private static Scraper scraper = new Scraper();
