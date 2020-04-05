@@ -1,11 +1,3 @@
-/*Static Members: Instance members belong to instances/objects while Static members belong to a class.
-Example:
-Exployee.numberOfEmployees //The static member numberOfEmployees should not be used in new instances of an Employee
-and should only exist once, within a class. */
-//Abstraction: Reduce complexity by hiding unnecessary details
-/*Coupling: The level of dependency between classes.
-There will always be coupling but we need to aim to reduce coupling.*/
-//Encapsulation: Bundle the data and methods that operate on the data in a single unit/object
 package com.Dracodess;
 
 public class Main {
