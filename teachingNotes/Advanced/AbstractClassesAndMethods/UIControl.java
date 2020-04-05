@@ -1,9 +1,9 @@
 package com.Dracodess;
 
-# public abstract class UIControl {
+ public abstract class UIControl {
     protected boolean isEnabled = true;
 
-# public abstract void render();
+ public abstract void render();
 
     public void enable(){
         isEnabled = true;
