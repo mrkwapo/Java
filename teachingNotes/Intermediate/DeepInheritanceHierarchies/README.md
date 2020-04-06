@@ -1,4 +1,5 @@
-# DO NOT CREATE DEEP INHERITANCE HIERARCHIES
+# DO NOT CREATE DEEP INHERITANCE HIERARCHIES  
+
 
 * It couples classes too much.
 * If you change a deeply coupled class you will have to modify the classes it is coupled with
