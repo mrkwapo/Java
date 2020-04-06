@@ -1,0 +1,8 @@
+# Interface Segregation Principle (ISP)
+
+In the field of software engineering, the interface-segregation principle states that no client should be forced to depend on 
+methods it does not use. ISP splits interfaces that are very large into smaller and more specific ones so that clients will only 
+have to know about the methods that are of interest to them.
+
+
+* Divide big interfaces into smaller ones to reduce the impact of changes
