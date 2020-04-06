@@ -1,4 +1,4 @@
-#Dependency Injection
+# Dependency Injection
 
 * Our classes should not instantiate their dependencies.
 
@@ -12,10 +12,13 @@ In computer science, separation of concerns (SoC) is a design principle for sepa
 each section addresses a separate concern. A concern is a set of information that affects the code of a computer program.
 
 
-#There are basically three types of dependency injection: #
-## constructor injection: ## the dependencies are provided through a class constructor.
-## setter injection: ## the client exposes a setter method that the injector uses to inject the dependency.
-## interface injection: ## the dependency provides an injector method that will inject the dependency into any client passed to it. 
+# There are basically three types of dependency injection: 
+## Constructor Injection: 
+ The dependencies are provided through a class constructor.
+## Setter Injection:  
+ The client exposes a setter method that the injector uses to inject the dependency.
+## Interface Injection:  
+ The dependency provides an injector method that will inject the dependency into any client passed to it. 
 
 Clients must implement an interface that exposes a setter method that accepts the dependency. So now its the dependency injection’s 
 responsibility to:
