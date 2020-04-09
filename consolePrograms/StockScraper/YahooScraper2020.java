@@ -16,7 +16,8 @@ import static com.google.common.base.Strings.isNullOrEmpty;
 public class YahooScraper2020 implements Scraper {
 
     private String PATH = System.setProperty("webdriver.chrome.driver", "C:/Users/YourPathHere/chromedriver.exe");
-    private WebDriver driver = new ChromeDriver();
+    private ChromeOptions options = new ChromeOptions().addArguments("--headless");
+    private WebDriver driver = new ChromeDriver(options);
     private WebDriverWait wait = new WebDriverWait(driver, 20000);
 
 
