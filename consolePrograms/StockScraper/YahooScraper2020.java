@@ -15,7 +15,7 @@ import static com.google.common.base.Strings.isNullOrEmpty;
 
 public class YahooScraper2020 implements Scraper {
 
-    private String PATH = System.setProperty("webdriver.chrome.driver", "C:/Users/Kwapalapagus/Desktop/Chrome/chromedriver.exe");
+    private String PATH = System.setProperty("webdriver.chrome.driver", "C:/Users/YourPathHere/chromedriver.exe");
     private WebDriver driver = new ChromeDriver();
     private WebDriverWait wait = new WebDriverWait(driver, 20000);
 
@@ -27,7 +27,7 @@ public class YahooScraper2020 implements Scraper {
 
         WebElement userNameInputBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-username")));
 
-        userNameInputBox.sendKeys("mrkwapo@yahoo.com");
+        userNameInputBox.sendKeys("YourYahooEmail@yahoo.com");
 
         WebElement usernameNextButton = driver.findElement(By.id("login-signin"));
 
@@ -35,7 +35,7 @@ public class YahooScraper2020 implements Scraper {
 
         WebElement passwordInputBox = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("login-passwd")));
 
-        passwordInputBox.sendKeys("Careerdevs1!");
+        passwordInputBox.sendKeys("YourPassword");
 
         WebElement passwordNextButton = driver.findElement(By.id("login-signin"));
         passwordNextButton.sendKeys(Keys.RETURN);
