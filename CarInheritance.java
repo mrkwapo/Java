@@ -28,9 +28,6 @@ abstract class Car {
             + this.getMileage() + ".");
     }
 }
-
-// Write your code here.
-
 /**
 *   WagonR class
 **/
